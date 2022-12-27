@@ -3,7 +3,7 @@ let btn = document.querySelector("#botao");
 let lista = document.querySelector("#lista");
 let card = document.querySelector(".card");
 
-let tarefas = [];
+let tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
 
 function renderizarTarefas(){
     for(tarefa of tarefas){
@@ -28,8 +28,8 @@ btn.addEventListener('click', ()=>{
     renderizarTarefas();
     input.value = '';
     removerSpans();
-    }
-    else{
+    salvarDadosNoStorage()
+    }else{
         removerSpans();
         let span = document.createElement("span");
         span.setAttribute("class", "alert alert-warning");
@@ -50,5 +50,9 @@ function deletarTarefa(tarefa){
     lista.innerHTML = '';
     tarefas.splice(tarefas.indexOf(tarefa.textContent),1);
     renderizarTarefas();
+    salvarDadosNoStorage();
 };
 
+function salvarDadosNoStorage(){
+    localStorage.setItem('tarefas',JSON.stringify(tarefas));
+};
