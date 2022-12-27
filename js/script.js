@@ -11,6 +11,9 @@ function renderizarTarefas(){
         itemLista.setAttribute("class", "list-group-item list-group-item-action");
         let itemTexto = document.createTextNode(tarefa);
         itemLista.appendChild(itemTexto);
+        itemLista.onclick = function(){
+            deletarTarefa(this);
+        }
         lista.appendChild(itemLista);
     };
 };
@@ -33,7 +36,7 @@ btn.addEventListener('click', ()=>{
         let msg = document.createTextNode("Você precisa informar a tarefa!");
         span.appendChild(msg);
         card.appendChild(span);
-    }
+    };
 });
 
 function removerSpans(){
@@ -44,5 +47,8 @@ function removerSpans(){
 };
 
 function deletarTarefa(tarefa){
+    lista.innerHTML = '';
+    tarefas.splice(tarefas.indexOf(tarefa.textContent),1);
+    renderizarTarefas();
+};
 
-}
