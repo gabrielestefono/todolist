@@ -19,7 +19,7 @@ Pronto! Agora você deve estar visualizando o website localmente no seu navegado
 
 ## Como usar:
 
-A página do projeto é a layout para criação/seleção de habilidades de um personagem para um jogo, onde você deve mudar as estatísticas para que o personagem tenha um balanceamento desejável.
+A web aplicação é uma lista de tarefas, fique à vontade pra utilizar a seu favor. Com ela é possível criar novas tarefas e remover-las ao clicar nelas, além disso, essas tarefas ficam salvas no seu navegador, então, caso queira fechar a página e voltar depois, elas provavelmente ainda estarão salvas.
 
 ## Contato
 
